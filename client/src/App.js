@@ -1,9 +1,10 @@
 import "./AppStyle.css";
+import MakeProducts from "./components/MakeProducts";
 
 const App = () => {
   return (
     <div className="App">
-      <div>Hello</div>
+      <MakeProducts />
     </div>
   );
 };
