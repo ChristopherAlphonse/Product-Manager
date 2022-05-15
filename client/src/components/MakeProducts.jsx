@@ -6,10 +6,30 @@ const MakeProducts = (props) => {
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
 
+  const submitHandler = (e) => {
+    e.preventDefault();
+    setDescription("");
+    setPrice("");
+    setTitle("");
+    axios
+      .post("http://localhost:8000/api/products", {
+        title,
+        price,
+        description,
+      })
+      .then((res) => {
+        console.log(res);
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(`Axios error occurred in the MakeProducts file${err}`);
+      });
+  };
+
   return (
     <main>
       <header>Product Manager</header>
-      <form>
+      <form onSubmit={submitHandler}>
         <section>
           <label htmlFor="title"> Title </label>
           <input
@@ -23,7 +43,7 @@ const MakeProducts = (props) => {
         </section>
 
         <section>
-          <label htmlFor="price"> Price </label>
+          <label htmlFor="price"> Price</label>
           <input
             type="number"
             value={price}
@@ -45,7 +65,9 @@ const MakeProducts = (props) => {
             }}
           />
         </section>
-        <button type="submit"> Update </button>
+        <button type="submit" onSubmit={submitHandler}>
+          Update
+        </button>
       </form>
     </main>
   );
