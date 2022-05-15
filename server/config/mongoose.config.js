@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
-
-const productDataBase = "products";
-
+const dataBase = "products";
 mongoose
-  .connect(`mongodb://localhost/${productDataBase}`, {
+  .connect(`mongodb://localhost/${dataBase}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
   .then(() => {
-    console.log(`Connected to the ${productDataBase} database!`);
+    console.log(`Connected to the ${dataBase} database!`);
   })
-  .catch((err) => console.log(`Something went wrong ${err}`));
+  .catch((err) => {
+    console.log(`Error in the config server file${err}`);
+  });

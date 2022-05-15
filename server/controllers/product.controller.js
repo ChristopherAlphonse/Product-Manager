@@ -1,11 +1,12 @@
-const Product = require("../models/product.model");
+const Product = require("../models/product.model.js");
 
 module.exports = {
-  createProduct: (res, req) => {
-    Product.create(req.body).then((newProduct) => {
-      res.json(newProduct).catch((err) => {
-        console.log(`Error in the Controller ${err}`);
-      });
-    });
-  },
+  createProduct: (req, res) =>
+    Product.create(req.body)
+      .then((newProduct) => {
+        res.json(newProduct);
+      })
+      .catch((err) => {
+        console.log(`Error found in the controller server file${err}`);
+      }),
 };
