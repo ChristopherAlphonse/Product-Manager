@@ -1,9 +1,37 @@
 .App {
   font-weight: 900;
   margin: 0 auto;
-  font-size: 5rem;
+  font-size: 2rem;
 }
 
 * {
   font-family: sans-serif;
+  border: none;
+  outline: none;
+}
+
+input {
+  background-color: rgb(205, 204, 204);
+  padding: 0.5rem 1rem;
+  display: flex;
+  border-radius: 2rem;
+  color: #8d8a8a;
+}
+
+form {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+button {
+  padding: 0.2rem 1.2rem;
+  border-radius: 2rem;
+}
+
+button:hover {
+  background-color: #e3e0e0;
+  cursor: pointer;
+  transition: all ease-in-out 0.5s;
 }
