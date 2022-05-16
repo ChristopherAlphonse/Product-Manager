@@ -10,7 +10,10 @@ module.exports = {
       .catch((err) => {
         res
           .status(400)
-          .json({ message: "Something went wrong in create", error: err });
+          .json({
+            message: "Something went wrong while adding a product",
+            error: err,
+          });
       });
   },
   getProducts: (req, res) => {
@@ -21,7 +24,10 @@ module.exports = {
       .catch((err) => {
         res
           .status(400)
-          .json({ message: "Something went wrong in getProducts", error: err });
+          .json({
+            message: "Something went wrong while getting a product",
+            error: err,
+          });
       });
   },
   getProductByID: (req, res) => {
@@ -32,7 +38,10 @@ module.exports = {
       .catch((err) => {
         res
           .status(400)
-          .json({ message: "something went wrong in findById", error: err });
+          .json({
+            message: "something went wrong while get an product id",
+            error: err,
+          });
       });
   },
   updateProduct: (req, res) => {
@@ -46,7 +55,10 @@ module.exports = {
       .catch((err) => {
         res
           .status(400)
-          .json({ message: "something went wrong in updateOne", error: err });
+          .json({
+            message: "something went wrong while updating a product",
+            error: err,
+          });
       });
   },
   deleteProduct: (req, res) => {
@@ -57,7 +69,10 @@ module.exports = {
       .catch((err) => {
         res
           .status(400)
-          .json({ message: "something went wrong in deleteOne", error: err });
+          .json({
+            message: "something went wrong while deleting a product",
+            error: err,
+          });
       });
   },
 };
