@@ -38,7 +38,7 @@ const CreateProduct = (props) => {
 
       <form onSubmit={submitHandler}>
         <div className="form-fields">
-          <label>Title</label>
+          <label>Product</label>
           <input
             onChange={(e) => setTitle(e.target.value)}
             value={title}
