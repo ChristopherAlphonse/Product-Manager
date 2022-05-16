@@ -5,9 +5,5 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => {
-    console.log(`Connected to the ${dataBase} database!`);
-  })
-  .catch((err) => {
-    console.log(`Error in the config server file${err}`);
-  });
+  .then(() => console.log(`Connected to ${dataBase} database!`))
+  .catch((err) => console.log(err));
