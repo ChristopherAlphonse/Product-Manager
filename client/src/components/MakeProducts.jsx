@@ -22,7 +22,7 @@ const MakeProducts = (props) => {
         console.log(res.data);
       })
       .catch((err) => {
-        console.log(`Axios error occurred in the MakeProducts file${err}`);
+        console.log(`Axios error occurred in the MakeProducts file ${err}`);
       });
   };
 
