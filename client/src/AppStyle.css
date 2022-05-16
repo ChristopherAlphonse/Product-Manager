@@ -1,11 +1,12 @@
 :root {
-  --prim-color: #e1e2e3;
+  --prim-color: #181819;
+  --second-color: #343434;
 }
 
 .App {
   font-weight: 900;
   margin: 0 auto;
-  font-size: 1 2rem;
+  font-size: 2rem;
 }
 
 * {
@@ -15,12 +16,16 @@
 }
 
 input {
-  background-color: rgb(205, 204, 204);
+  background-color: var(--second-color);
   padding: 0.5rem 1rem;
   display: flex;
-  border-radius: 2rem;
-  color: #4b4949;
+  border-radius: 0.2rem;
+  color: #fff;
   font-weight: 600;
+}
+body {
+  background-color: var(--prim-color);
+  color: #fff;
 }
 
 form {
@@ -29,24 +34,24 @@ form {
   align-content: center;
   align-items: center;
   background-color: var(--prim-color);
-  width: 500px;
-  margin: 0 auto;
   border-radius: 2rem;
   height: 80vh;
   justify-content: center;
+  color: #fff;
 }
 
 button {
-  padding: 0.4rem 5rem;
+  padding: 0.4rem 4.5rem;
   border-radius: 0.3rem;
   margin-top: 3rem;
   font-weight: 600;
   text-transform: uppercase;
   background-color: #ffffff;
+  color: var(--prim-color);
 }
 
 button:hover {
-  background-color: #505050;
+  background-color: var(--second-color);
   cursor: pointer;
   color: #fff;
   transition: all ease-in-out 0.2s;
@@ -59,4 +64,20 @@ header {
 
 section {
   margin-top: 2rem;
+}
+
+@media only screen and (max-width: 600px) {
+  form {
+    width: 500px;
+    margin: 0 auto;
+    font-size: 50%;
+    height: 50vh;
+    margin-top: 2rem;
+  }
+  button {
+    padding: 0.2rem 2.5rem;
+  }
+  header {
+    font-size: 2.5rem;
+  }
 }

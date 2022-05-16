@@ -31,7 +31,7 @@ const MakeProducts = (props) => {
       <header>Product Manager</header>
       <form onSubmit={submitHandler}>
         <section>
-          <label htmlFor="title"> Title </label>
+          <label htmlFor="product"> Product </label>
           <input
             type="text"
             value={title}
