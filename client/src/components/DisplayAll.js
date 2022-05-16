@@ -1,21 +1,19 @@
 import React, { useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-function Display(props) {
+const DisplayAll = (props) => {
   const { productList, setProductList } = props;
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
       .get("http://localhost:8000/api/products")
       .then((res) => {
-        console.log(res);
         console.log(res.data);
         setProductList(res.data);
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err) => console.log(err));
   }, []);
 
   const deleteFilter = (idFromBelow) => {
@@ -23,9 +21,11 @@ function Display(props) {
       .delete(`http://localhost:8000/api/products/${idFromBelow}`)
       .then((res) => {
         console.log(res.data);
-        setProductList(
-          productList.filter((product, index) => product._id !== idFromBelow)
+
+        const newList = productList.filter(
+          (product, index) => product._id !== idFromBelow
         );
+        setProductList(newList);
       })
       .catch((err) => {
         console.log(err);
@@ -34,21 +34,22 @@ function Display(props) {
 
   return (
     <div>
-      <header>All Products</header>
+      <header>All Products:</header>
+
       {productList.map((product, index) => (
-        <div key={product._id}>
-          <Link to={`/product/${product._id}`} className="products">
-            {product.title}
-          </Link>
+        <div key={index}>
+          <Link to={`/product/${product._id}`}>{product.title}</Link>
           <br />
-          <Link to={`/product/edit/${product._id}`} className="edit">
+
+          <button onClick={() => navigate(`/product/edit/${product._id}`)}>
             Edit
-          </Link>
+          </button>
+
           <button onClick={() => deleteFilter(product._id)}>Delete</button>
         </div>
       ))}
     </div>
   );
-}
+};
 
-export default Display;
+export default DisplayAll;

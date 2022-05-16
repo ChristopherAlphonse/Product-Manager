@@ -1,12 +1,22 @@
-import "./AppStyle.css";
-import MakeProducts from "./components/MakeProducts";
+import "./App.css";
 
-const App = () => {
+import Main from "./view/Main";
+import OneProduct from "./components/OneProduct";
+import UpdateProduct from "./components/UpdateProduct";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+function App() {
   return (
-    <div className="App">
-      <MakeProducts />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/product/:id" element={<OneProduct />} />
+          <Route path="/product/edit/:id" element={<UpdateProduct />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
-};
+}
 
 export default App;
