@@ -11,7 +11,7 @@ const Main = (props) => {
         productList={productList}
         setProductList={setProductList}
       />
-
+<div>hi olga</div>
       <DisplayAll productList={productList} setProductList={setProductList} />
     </div>
   );
